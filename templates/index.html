@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación Flask | Inicio</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+
+<body>
+
+    <main class="contenedor">
+        <section class="tarjeta">
+            <h1>Evaluación N°3</h1>
+
+            <p class="descripcion">
+                Bienvenido.
+                Selecciona una actividad para comenzar.
+            </p>
+
+            <div class="menu-botones">
+                <a href="{{ url_for('ejercicio1') }}" class="boton">
+                    Ejercicio 1: Notas y asistencia
+                </a>
+
+                <a href="{{ url_for('ejercicio2') }}" class="boton">
+                    Ejercicio 2: Comparación de nombres
+                </a>
+            </div>
+
+            <p class="pie">
+                Desarrollado por Leonardo Iunnissi.
+            </p>
+        </section>
+    </main>
+
+</body>
+</html>

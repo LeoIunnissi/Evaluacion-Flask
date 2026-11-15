@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 | Comparación de nombres</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+
+<body>
+
+    <main class="contenedor">
+        <section class="tarjeta">
+
+            <h1>Formulario de Nombres</h1>
+
+            <p class="descripcion">
+                Ingresa tres nombres diferentes para identificar cuál contiene
+                la mayor cantidad de caracteres.
+            </p>
+            {% if error %}
+                <p class="mensaje-error">{{ error }}</p>
+            {% endif %}
+
+            <form action="{{ url_for('ejercicio2') }}" method="POST">
+
+                <div class="grupo-formulario">
+                    <label for="nombre1">Nombre 1:</label>
+                    <input type="text" id="nombre1" name="nombre1"
+                           maxlength="50" required>
+                </div>
+
+                <div class="grupo-formulario">
+                    <label for="nombre2">Nombre 2:</label>
+                    <input type="text" id="nombre2" name="nombre2"
+                           maxlength="50" required>
+                </div>
+
+                <div class="grupo-formulario">
+                    <label for="nombre3">Nombre 3:</label>
+                    <input type="text" id="nombre3" name="nombre3"
+                           maxlength="50" required>
+                </div>
+
+                <button type="submit" class="boton">
+                    Enviar
+                </button>
+
+            </form>
+
+            <a href="{{ url_for('index') }}" class="volver">
+                Volver al menú principal
+            </a>
+
+        </section>
+    </main>
+
+</body>
+</html>

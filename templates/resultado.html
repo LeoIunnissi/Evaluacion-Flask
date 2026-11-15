@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados | Evaluación Flask</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+
+<body>
+
+    <main class="contenedor">
+        <section class="tarjeta">
+
+            {% if ejercicio == 1 %}
+
+                <h1>Resultado del Ejercicio 1</h1>
+
+                <div class="resultado">
+                    <p>Promedio obtenido:</p>
+                    <h2>{{ "%.1f"|format(promedio) }}</h2>
+
+                    <p>Asistencia:</p>
+                    <h2>{{ asistencia }}%</h2>
+
+                    <div class="estado {{ 'aprobado' if estado == 'APROBADO' else 'reprobado' }}">
+                        {{ estado }}
+                    </div>
+                </div>
+
+            {% elif ejercicio == 2 %}
+
+                <h1>Resultado del Ejercicio 2</h1>
+
+                <div class="resultado">
+                    <p>El nombre con mayor cantidad de caracteres es:</p>
+
+                    <h2>{{ nombre_mayor }}</h2>
+
+                    <p>El nombre tiene:</p>
+
+                    <h2>{{ cantidad_caracteres }} caracteres</h2>
+                </div>
+
+            {% endif %}
+
+            <a href="{{ url_for('index') }}" class="boton">
+                Volver al menú principal
+            </a>
+
+        </section>
+    </main>
+
+</body>
+</html>
